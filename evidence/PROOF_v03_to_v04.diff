@@ -1,0 +1,161 @@
+--- v0.3/PROOF.md
++++ v0.4/PROOF.md
+@@ -2,12 +2,14 @@
+ 
+ Ryutaro Yonezu — Yonezu Research Lab  
+ yonezaemon1+research@gmail.com  
+-Working proof v0.3, 21 October 2026. AI-assisted research. All rights reserved.
+-
+-**Status:** internally derived proofs with finite checks. External independent
+-proof audit and human peer review have not been performed. Novelty remains
+-INCONCLUSIVE. This is not a frozen preprint or a public release. No priority
+-claim is made. The exact diameter is derived in Sections 7–10, with an
++Working proof v0.4, 22 October 2026 (Japan). AI-assisted research. All rights reserved.
++
++**Status:** a user-supplied independent AI audit of v0.3 reports PROOF=PASS
++with two minor exposition issues and COMPUTATION=PASS. This v0.4 addresses
++those issues; independent review of the revisions is pending. That audit's
++REFERENCES and NOVELTY verdicts remain INCONCLUSIVE. Human peer review has
++not been performed. This is not a frozen preprint or a public release. No
++priority claim is made. The exact diameter is derived in Sections 7–10, with an
+ analytic proof for n >= 16 and exhaustive finite bases below that threshold.
+ The exact metric for two specified arbitrary paths is not claimed.
+ 
+@@ -333,21 +335,84 @@
+ 
+ The last inequality uses $f\ge n-(B-A+1)$.
+ 
+-Suppose $G\ge3$ and choose a split attaining it. Sweep the left endpoint
+-from $a$ to $h$, consuming the left swaps of $S$, and then back to $c$,
+-creating the left swaps of $T$. Sweep the right endpoint from $b$ to $z$,
+-consuming the remaining swaps of $S$, and then back to $d$, creating the
+-remaining swaps of $T$.
+-
+-These are legal sweeps: the unprocessed right swaps have positions at least
+-$z\ge h+2$, while the left swaps to be retained have positions at most
+-$h-1\le z-3$. The two endpoint excursions therefore do not interfere.
+-The union can have close positions coming from different paths, but those
+-positions are consumed before the replacements are created on the same
+-side; within each of $S,T$ the required separation is already present.
+-The four boundary indicators contribute a total $\Delta\le4$.
+-Counting the endpoint displacements and the two-move saving per deletion
+-or insertion gives the actual route length
++Suppose $G\ge3$ and choose a split attaining it. Write
++$S_L=S\cap X_{\rm left}$, $S_R=S\cap X_{\rm right}$, and similarly
++$T_L,T_R$. The definitions give
++
++$$ a,c\le h\le z-2\le b-2,d-2,\qquad
++\max X_{\rm left}\le h-1,\qquad \min X_{\rm right}\ge z, $$
++
++where an assertion about an empty set is omitted. We construct four
++successive legs and verify each intermediate normal form.
++
++**Left inward leg.** Hold $b$ fixed and advance the left endpoint $x$
++from $a$ to $h$. Apply the inward moves of Section 3: delete the first
++remaining swap $i=x+2$ by advancing to $i+1=x+3$; at $x=0,i=1$ advance
++to $2$ instead; otherwise advance by one. These moves consume $S_L$ in
++increasing order. A deletion of a left swap ends at $i+1\le h$, so it
++does not overshoot $h$. No right swap is consumed, because its position
++is at least $z\ge h+2$. The remaining swaps retain their original
++three-spacing. On a unit step the first remaining swap is at least $x+3$,
++which is the lower bound at the new endpoint $x+1$. After deleting
++$i=x+2$, the next swap is at least $i+3=x+5$, the lower bound at $x+3$.
++After the boundary deletion of $1$, the next swap is at least $4$,
++the lower bound at endpoint $2$. Thus the lower admissibility bound is
++preserved in all three cases. Since $x\le h\le b-2$, the ordered endpoints never cross
++and the upper admissibility bound is unchanged. At $x=h$ no left swap
++can remain: an admissible swap there would have position at least
++$h+2$ (at least $1$ if $h=0$), whereas every left swap is at most $h-1$.
++The resulting code is $(h,b,S_R)$.
++
++**Left outward leg.** Hold $b$ fixed and move from $h$ to $c$, creating
++the swaps of $T_L$ in decreasing order. For a prescribed swap $i$,
++use outward unit moves until the endpoint is $i+1$, then insert $i$:
++the new endpoint is $i-2$ if $i\ge2$, and is $0$ if $i=1$. Both are
++the insertion moves of Section 3. Target admissibility gives $i-2\ge c$
++when $i\ge2$, and $i=1$ requires $c=0$. Successive prescribed swaps
++differ by at least three, so an insertion cannot skip the next insertion
++position. Newly created left swaps are three-separated from one another
++and from $S_R$, since
++$\min S_R-\max T_L\ge z-(h-1)\ge3$ when both sets are nonempty.
++Each new swap satisfies the current lower admissibility bound, with the
++stated boundary exception; subsequent outward motion only relaxes that
++bound. Its upper bound follows from $i\le h-1\le b-3$.
++Thus every intermediate code is admissible. The leg ends at
++$(c,b,T_L\cup S_R)$.
++
++**Right inward and outward legs.** Reflect the labels by $i\mapsto n-1-i$
++and apply the same two constructions. The right endpoint moves from
++$b$ to $z$, deleting $S_R$ in decreasing order, and then from $z$ to $d$,
++creating $T_R$ in increasing order. Throughout these legs the left
++endpoint is $c\le h\le z-2$, and retained left swaps have position at
++most $h-1\le z-3$. The reflected admissibility and non-overshoot arguments
++therefore apply at every step. The final code is $(c,d,T_L\cup T_R)=J$.
++
++This also handles close positions in $S\cup T$: all old swaps on a side
++are deleted before any target swap on that side is inserted. No
++three-spacing property of the union is used.
++
++For the exact count, put
++$\Delta=\delta_L(H)+\delta_R(H)+\delta_L(J)+\delta_R(J)\le4$.
++A swap at $1$ must belong to $X_{\rm left}$: assigning it to the right
++would give $z\le1$, hence $g\le2$. Likewise a swap at $n-3$ must belong
++to $X_{\rm right}$, since assigning it to the left would give
++$h\ge n-2$, again $g\le2$. Thus all four boundary indicators are charged
++on precisely the legs that encounter the corresponding boundary swap.
++Every ordinary deletion or insertion covers displacement three in one
++move, saving two moves; a boundary operation covers displacement two
++in one move, saving one. All other moves cover displacement one.
++Consequently the four lengths are exactly
++
++| Leg | Length |
++| --- | --- |
++| Left inward | $h-a-2\lvert S_L\rvert+\delta_L(H)$ |
++| Left outward | $h-c-2\lvert T_L\rvert+\delta_L(J)$ |
++| Right inward | $b-z-2\lvert S_R\rvert+\delta_R(H)$ |
++| Right outward | $d-z-2\lvert T_R\rvert+\delta_R(J)$ |
++
++An empty leg has length zero by the same count. Adding these expressions
++gives $2h-a-c+b+d-2z-2u+\Delta$. Substituting
++$G=z-h+1$ and the definition of $f$ gives the actual route length
+ 
+ $$ U=2n-f-2u-2G+\Delta. \tag{2} $$
+ 
+@@ -563,8 +628,10 @@
+ **Case 2: $G\ge3$ and $u=0$.** The separated sweep uses only unit endpoint
+ moves, with length $|a-c|+|b-d|\le n-3\le L_n$.
+ 
+-**Case 3: $G\ge3$, $u>0$, and $n-e\ge10$.** The endpoint spans of both
+-paths are at least two, so their $\tau$ indicators vanish. Let
++**Case 3: $G\ge3$, $u>0$, and $n-e\ge10$.** Since $h\ge A$ and $z\le B$,
++$G=z-h+1\le B-A+1$. Thus $G\ge3$ implies $B-A\ge2$.
++Both endpoint intervals contain $[A,B]$, so $b-a\ge2$ and $d-c\ge2$;
++therefore $\tau(H)=\tau(J)=0$. Let
+ $m=v+1-t\ge1$; this is positive because the distinct boundary positions
+ counted by $t$ belong to $X$. From (10) and AM–GM,
+ 
+@@ -589,7 +656,7 @@
+ $d(H,J)\le U\le2n-c(n)=L_n$.
+ 
+ **Case 4: $G\ge3$, $u>0$, and $n-e<10$.** Now $f\ge e\ge n-9$,
+-and again $\tau(H)=\tau(J)=0$. By (9),
++and the same $G\ge3$ argument in Case 3 gives $\tau(H)=\tau(J)=0$. By (9),
+ 
+ $$ Q=2n-6-f-2u+\Delta\le n+3-u\le n+2\le L_n. $$
+ 
+@@ -650,9 +717,12 @@
+ 
+ Theorem D does not give an exact metric for two arbitrary specified paths.
+ Neither isometry of the core nor equality of edge-flip distance and
+-backbite distance is assumed. The derivation is internal: external
+-independent proof audit, human peer review, and a conclusive novelty
+-assessment have not occurred.
++backbite distance is assumed. The independent AI report for v0.3 finds
++no counterexample or invalid inference in Theorem D, while requesting the
++two exposition clarifications incorporated in v0.4. This report is
++preserved in INDEPENDENT_AI_AUDIT_v0_3.md; its raw independent code and
++logs have not been supplied here. Review of these revisions, human peer
++review, and a conclusive novelty assessment remain outstanding.
+ 
+ ## References
+ 

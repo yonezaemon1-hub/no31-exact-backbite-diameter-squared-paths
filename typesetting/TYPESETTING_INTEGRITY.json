@@ -1,0 +1,18 @@
+{
+  "audited_source_sha256": "e66bf6e69151ee1717341c5bd1d02335aba55f0c2e41024378c4317f3fa36664",
+  "publication_body_math_nodes_identical": true,
+  "math_nodes_count": 498,
+  "changes": "typesetting and research-status metadata only; source Markdown preserved byte-for-byte",
+  "audited_archive_sha256": "929ed470771e0dab445dbc72f894ba0c2a9b9b52c609f79e937529ceb424a8c8",
+  "audit_closure_archive_sha256": "72866a5b50bec5a4a9ec257c3e66aaa545bbbaad90e48c36c027e8870372d71c",
+  "pdf_pages": 13,
+  "pdf_visual_review": "all 13 pages rendered and visually reviewed",
+  "tex_layout_warnings": 0,
+  "layout_adjustments": [
+    "one display wrapped over two lines",
+    "bibliography links and ragged-right bibliography"
+  ],
+  "formal_paper_version": "0.4",
+  "independent_v04_audit_received": true,
+  "frozen_audited_source_files_changed": false
+}

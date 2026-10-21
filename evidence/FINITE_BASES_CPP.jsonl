@@ -1,0 +1,13 @@
+{"n":3,"vertices":3,"edges":3,"diameter":1,"eccentricity_histogram":{"1":3},"all_pairs":true,"edge_set_adjacency":true}
+{"n":4,"vertices":6,"edges":8,"diameter":3,"eccentricity_histogram":{"2":4,"3":2},"all_pairs":true,"edge_set_adjacency":true}
+{"n":5,"vertices":10,"edges":15,"diameter":3,"eccentricity_histogram":{"2":3,"3":7},"all_pairs":true,"edge_set_adjacency":true}
+{"n":6,"vertices":17,"edges":28,"diameter":5,"eccentricity_histogram":{"3":5,"4":10,"5":2},"all_pairs":true,"edge_set_adjacency":true}
+{"n":7,"vertices":28,"edges":49,"diameter":6,"eccentricity_histogram":{"4":8,"5":16,"6":4},"all_pairs":true,"edge_set_adjacency":true}
+{"n":8,"vertices":44,"edges":80,"diameter":7,"eccentricity_histogram":{"5":11,"6":24,"7":9},"all_pairs":true,"edge_set_adjacency":true}
+{"n":9,"vertices":68,"edges":127,"diameter":8,"eccentricity_histogram":{"6":16,"7":33,"8":19},"all_pairs":true,"edge_set_adjacency":true}
+{"n":10,"vertices":104,"edges":198,"diameter":10,"eccentricity_histogram":{"7":21,"8":43,"9":32,"10":8},"all_pairs":true,"edge_set_adjacency":true}
+{"n":11,"vertices":157,"edges":303,"diameter":11,"eccentricity_histogram":{"8":27,"9":58,"10":57,"11":15},"all_pairs":true,"edge_set_adjacency":true}
+{"n":12,"vertices":235,"edges":458,"diameter":12,"eccentricity_histogram":{"9":33,"10":72,"11":83,"12":47},"all_pairs":true,"edge_set_adjacency":true}
+{"n":13,"vertices":350,"edges":687,"diameter":14,"eccentricity_histogram":{"10":41,"11":90,"12":115,"13":88,"14":16},"all_pairs":true,"edge_set_adjacency":true}
+{"n":14,"vertices":519,"edges":1024,"diameter":15,"eccentricity_histogram":{"11":49,"12":109,"13":158,"14":162,"15":41},"all_pairs":true,"edge_set_adjacency":true}
+{"n":15,"vertices":767,"edges":1519,"diameter":16,"eccentricity_histogram":{"12":57,"13":128,"14":200,"15":247,"16":135},"all_pairs":true,"edge_set_adjacency":true}
