@@ -1,6 +1,6 @@
 cff-version: 1.2.0
-message: "Cite this unrefereed preprint after its Zenodo record is published. Scholarly novelty remains inconclusive."
-type: article
+message: "Please cite the unrefereed preprint using the preferred citation below. Scholarly novelty remains inconclusive."
+type: software
 title: "Exact Backbite Diameter of Squared Paths"
 authors:
   - family-names: Yonezu
@@ -11,11 +11,27 @@ version: "0.4"
 date-released: "2026-10-22"
 doi: "10.5281/zenodo.23548698"
 repository-code: "https://github.com/yonezaemon1-hub/no31-exact-backbite-diameter-squared-paths"
-license: "LicenseRef-All-Rights-Reserved"
+url: "https://zenodo.org/records/23548698"
+license-url: "https://github.com/yonezaemon1-hub/no31-exact-backbite-diameter-squared-paths/blob/main/LICENSE.txt"
 abstract: >-
   Exact backbite diameter of the squared path, with path reversals identified.
   The arbitrary-pair upper bound is analytic for n at least 16; the finite
   bases are explicitly computed. AI-assisted and not human peer reviewed.
   Independent AI proof and computation audits report PASS. The independent
   reference audit and scholarly novelty remain INCONCLUSIVE. No priority
-  claim is made. All rights reserved. The DOI is reserved pending publication.
+  claim is made. All rights reserved.
+preferred-citation:
+  type: article
+  title: "Exact Backbite Diameter of Squared Paths"
+  authors:
+    - family-names: Yonezu
+      given-names: Ryutaro
+      affiliation: Yonezu Research Lab
+  year: 2026
+  date-published: "2026-10-22"
+  version: "0.4"
+  doi: "10.5281/zenodo.23548698"
+  url: "https://zenodo.org/records/23548698"
+  publisher:
+    name: Zenodo
+  notes: "AI-assisted, unrefereed preprint. Novelty inconclusive; no priority claim. All rights reserved."

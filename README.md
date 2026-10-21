@@ -11,7 +11,12 @@ Research contact: yonezaemon1+research@gmail.com
 
 GitHub repository: https://github.com/yonezaemon1-hub/no31-exact-backbite-diameter-squared-paths
 
-Zenodo DOI **10.5281/zenodo.23548698** is reserved in a draft. Formal Zenodo publication and DOI registration are pending; the publication status will be updated after verification.
+Published as version 0.4 on 22 October 2026.
+
+Zenodo: https://zenodo.org/records/23548698  
+DOI: [10.5281/zenodo.23548698](https://doi.org/10.5281/zenodo.23548698)
+
+The public Zenodo PDF and frozen ZIP were retrieved after publication and matched the original SHA256 hashes. Both platforms specify All rights reserved.
 
 ## Result and scope
 
@@ -75,7 +80,7 @@ With an existing LaTeX installation, compile the root .tex source with pdflatex 
 
 ## Citation and contact
 
-Use CITATION.cff after publication. The reserved Zenodo DOI will become citable when the draft is published.
+Use CITATION.cff to cite the unrefereed preprint, DOI [10.5281/zenodo.23548698](https://doi.org/10.5281/zenodo.23548698).
 
 Research Inquiries — Yonezu Research Lab  
 Contact: yonezaemon1+research@gmail.com
